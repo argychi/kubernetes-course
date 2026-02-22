@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: traffic-gen
+  labels:
+    app: trafic-generator
+spec:
+  containers:
+  - name: traffic-gen
+    #image: argirisch/traffic-generator:1.0
+    image: lmacademy/traffic-generator:1.0.0
+    args:
+      - '10.110.144.47/api'
+      - '0.5'

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-replicas
+spec:
+  replicas: 12
+  selector:
+    matchLabels:
+      app: ingress
+  template:
+    metadata:
+      labels:
+        app: ingress 
+    spec:
+      containers:
+        - name: nginx-ingress
+          image: nginx:latest
+          ports:
+            - containerPort: 80 
+ 
